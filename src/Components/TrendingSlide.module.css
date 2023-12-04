@@ -1,0 +1,88 @@
+.slideCont{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    overflow: hidden;
+   
+}
+
+.slide{
+   height: 100%;
+    position: relative;
+     animation: slideAnim 70s infinite;
+   
+    
+   
+}
+
+.slide img{
+    width: 100vw;
+    height: 100%;
+    object-fit:cover;
+    object-position: 0 35%;
+    
+   
+   
+}
+@keyframes slideAnim{
+    0%{
+        right: 0;
+    }
+    10%{
+        right: 100vw;
+    }
+    20%{
+        right: 200vw;
+    }
+    30%{
+        right: 300vw;
+    }
+    40%{
+        right: 400vw;
+    }
+    50%{
+        right: 500vw;
+    }
+    60%{
+        right: 600vw;
+    }
+    70%{
+        right: 700vw;
+    }
+    80%{
+        right: 800vw;
+    }
+    90%{
+        right: 0;
+    }
+    100%{
+        right: 0;
+    }
+
+}
+
+.about{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.324);
+    bottom: 10%;
+    left: 4%;
+    min-height: 15%;
+    padding:2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+     line-height: 3rem;
+  
+    
+}
+
+.about h2{
+    font-size: 4.5rem;
+   font-weight: 100;
+    letter-spacing: .1rem;
+}
+.about p{
+    width: max-content;
+    margin-top: 2rem;
+    font-size: 2rem;
+}

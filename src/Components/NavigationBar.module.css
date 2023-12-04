@@ -1,0 +1,110 @@
+.navCont, .logo a, .navItem{
+    display: flex;
+    align-items: center;
+   
+}
+.navCont{
+    width: 100vw;
+    min-height: 6rem;
+   padding: 0 3rem;
+   background-color: rgba(0, 0, 0, 0.288);
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 100;
+   
+}
+.logo{
+    width: 12%;
+    height: 100%;
+    
+   
+}
+.logo a{
+    height: 100%;
+
+}
+
+
+
+.navItem{
+display: flex;
+height: 100%;
+gap: 3rem;
+}
+.navItem li{
+    list-style: none;
+    
+   
+    
+}
+.navItem li a{
+    text-decoration: none;
+    color: white;
+   border: .1rem solid transparent;
+    padding: .3rem .6rem;
+}
+.navItem li a.active{
+    border: .1rem solid;
+}
+.navItem li a:hover{
+    border: .1rem solid;
+}
+.userProfile{
+    height: 100%; 
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+#profileLogo{
+    width: 3rem;
+    height: 3rem;
+       
+}
+#profileLogo img{
+    width: 100%;
+    height: 100%;
+   
+   
+}
+
+#username{
+text-transform: capitalize;
+font-size: 1.4rem;
+}
+.favLogDiv{
+   margin-left: 1.5rem;
+   display: flex;
+   gap: .5rem;
+}
+
+.favLog{
+    text-decoration: none;
+    color: white;
+    display: flex;
+    gap: .4rem;
+    align-items: center;
+    border: .1rem solid transparent;
+    padding: 0 .5rem;
+}
+.favLog i{
+    font-size: 1.6rem;
+
+}
+
+.favLog span{
+    font-size: 1.34rem;
+   
+
+}
+#favourite i{
+    color: rgb(236, 218, 20);
+   
+}
+#logout i{
+    color: rgb(222, 85, 85);
+}
+.favLog:hover{
+    border: .1rem solid;
+}
+

@@ -1,0 +1,132 @@
+.container{
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+    
+}
+.backImage{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+}
+.detailCont{
+    padding-top: 6rem;
+    height: 100vh;
+    background-color: rgba(34, 34, 34, 0.801);
+
+}
+
+.detail{
+    width: 85%;
+  
+    margin:5rem auto;
+  display: flex;
+    flex-wrap: wrap;
+
+}
+.poster{
+
+    width:25rem;
+     height: 35rem;
+     box-shadow: .3rem .1rem 1rem black;
+    
+
+}
+.poster img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.about{
+    padding-left: 4rem;
+width: calc(100% - 25rem);
+
+
+}
+#title{
+    font-size: 2.1rem;
+    font-weight: 400;
+
+}
+#tagline{
+    font-size: 1.2rem;
+    line-height: 2rem;
+    color: rgb(236, 236, 236);
+  
+}
+#genre{
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    font-size: 1.2rem;
+
+}
+#genre span{
+    box-shadow: .1rem .1rem .5rem rgb(27, 26, 26);
+    background-color: rgba(247, 125, 125, 0.628);
+    line-height: 2.2rem;
+    padding: 0 1rem;
+    border-radius: 2rem;
+
+
+}
+#overview h3{
+    margin-top: 1rem;
+    font-size: 1.6rem;
+    letter-spacing: .05rem;
+    font-weight: 400;
+
+}
+
+#overview  p{
+    line-height: 1.9rem;
+    font-size: 1.35rem;
+    color: rgb(236, 236, 236);
+    font-weight: 100;
+}
+.extra{
+    display: flex;
+    gap: 1.5rem;
+    padding: .4rem 0;
+    border-bottom: .1rem  solid rgba(203, 201, 201, 0.669);;
+    width: 60%;
+}
+#rate, #statdetail{
+    margin-top: 1rem;
+    font-size: 1.35rem;
+
+
+}
+
+.value{
+    color: rgb(246, 165, 165);
+    font-size: 1.2rem;
+    
+    
+}
+.btns{
+   
+    margin-top: 2rem;
+    display: flex;
+    gap: 2rem;
+}
+.button{
+text-decoration: none;
+background: none;
+border: none;
+border-radius: 2rem;
+color: white;
+padding: 0 1rem;
+cursor: pointer;
+background-color: rgba(247, 125, 125, 0.539);
+font-size: 1.2rem;
+
+}
+.btns a{
+    background-color: rgba(193, 193, 45, 0.539)
+}
+.button:hover{
+    background-color: rgba(125, 247, 172, 0.685);
+}
