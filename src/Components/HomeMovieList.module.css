@@ -1,0 +1,105 @@
+
+#header{
+
+background-color: rgba(128, 128, 128, 0.235);
+padding: 1rem 4rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin: 1rem 0;
+}
+#header button{
+    border: none;
+    cursor: pointer;
+    color: white;
+    background: none;
+     font-size: 1.8rem;
+}
+#header button:hover{
+    color: rgb(115, 232, 115);
+    transform: scale(1.2);
+}
+#header h2{
+font-size: 1.7rem;
+}
+#banner{
+    height: 80vh;
+    position: relative;
+}
+#banner img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 25%;
+    position: absolute;
+    z-index: -1;
+    opacity: .8;
+    
+
+}
+#listContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    padding:2rem 0rem;
+    justify-content: center;
+}
+#listContainer button{
+    cursor: pointer;
+    background: none;
+    border: .2rem solid transparent;
+    transition:  transform 0.3s;
+   
+}
+#listContainer button:hover{
+    transform: scale(1.08);
+    border: .2rem solid rgb(110, 241, 110);
+}
+.list{
+    width: 20rem;
+    height: 25rem;
+}
+.list img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.about{
+    position: absolute;
+   width: 100%;
+padding: 2rem;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.427);
+}
+#title{
+    font-size: 2.2rem;
+    padding: .5rem 0;
+    font-weight: 400;
+
+}
+#overview{
+line-height: 2rem;
+font-weight: 100;
+color: rgb(231, 230, 230);
+}
+#rating{
+display: flex;
+margin: .5rem 0;
+align-items: center;
+gap: .5rem;
+}
+#rating i{
+    font-size:2rem
+}
+#rating span{
+    font-size: 1.3rem;
+    color: rgb(244, 244, 159);
+}
+#moreinfo{
+text-decoration: none;
+color: white;
+padding: .5rem .7rem;
+border: .1rem solid;
+font-size: 1.3rem;
+background-color: rgba(243, 152, 152, 0.527);
+}

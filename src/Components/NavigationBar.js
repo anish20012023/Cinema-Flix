@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import navcss from './NavigationBar.module.css';
 import logo from '../logo.png'
 import { NavLink } from 'react-router-dom';
@@ -9,23 +9,13 @@ import profileLogo from '../profile.webp'
 
 function NavigationBar() {
 let username=localStorage.getItem("currentUser")?JSON.parse(localStorage.getItem("currentUser")).username: ""
-  const navbar = useRef()
-  window.onscroll = function () {
-    if (window.pageYOffset > 500) {
 
-
-      navbar.current.style.backgroundColor = 'rgba(25, 25, 25, 0.95)';
-    }
-    else {
-
-      navbar.current.style.backgroundColor = 'rgba(0, 0, 0, 0.288)';
-    }
-  }
+ 
 
 
 
   return (
-    <nav className={navcss.navCont} ref={navbar}>
+    <nav className={navcss.navCont}>
 
       <div className={navcss.logo}>
         <NavLink to="/user">
@@ -33,9 +23,9 @@ let username=localStorage.getItem("currentUser")?JSON.parse(localStorage.getItem
       </div>
 
       <ul className={navcss.navItem}>
-        <li ><NavLink className={({ isActive }) => isActive ? navcss.active : undefined} to="movies/1">Movies</NavLink></li>
+        <li ><NavLink className={({ isActive }) => isActive ? navcss.active : undefined} to="/user/movies/1">Movies</NavLink></li>
         <li ><NavLink className={({ isActive }) => isActive ? navcss.active : undefined} to="tv/1">Tv Shows</NavLink></li>
-        <li><NavLink className={({ isActive }) => isActive ? navcss.active : undefined} to="popular/1">Popular</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? navcss.active : undefined} to="/user/popular/1">Popular</NavLink></li>
         <li><NavLink className={({ isActive }) => isActive ? navcss.active : undefined} to="upcoming/1">Upcoming</NavLink></li>
       </ul>
       <div className={navcss.userProfile}>

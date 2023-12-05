@@ -3,17 +3,41 @@ import dcss from './MovieDetail.module.css'
 import { useLoaderData } from 'react-router-dom';
 import bckimg from '../banner1.jpg'
 
-function MovieDetail({ id }) {
+function MovieDetail() {
     const data = useLoaderData();
-    console.log(data)
+    let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    let existUser = JSON.parse(localStorage.getItem('user'))
+
+    function handleFav() {
+        let favmovie = { title: data.title, poster: data.poster_path, rating: data.vote_average.toFixed(1), id: data.id, background:data.backdrop_path };
+        existUser.forEach(user => {
+            if (user.username === currentUser.username) {
+                user.favourite.push(favmovie);
+            }
+        })
+        localStorage.setItem('user', JSON.stringify(existUser)); // adding updated existuser in user.
+        // currentUser.favourite.push(favmovie); // updating currentuser data 
+        // localStorage.setItem('currentUser', JSON.stringify(currentUser));// adding updated current user data.
+
+
+
+
+
+
+
+
+
+
+    }
+
     return (
         <div className={dcss.container} >
 
-            <img className={dcss.backImage} src={data.backdrop_path ? `https://image.tmdb.org/t/p/original/${data.backdrop_path}` :bckimg} alt="" />
+            <img className={dcss.backImage} src={data.backdrop_path ? `https://image.tmdb.org/t/p/original/${data.backdrop_path}` : bckimg} alt="" />
             <div className={dcss.detailCont}>
                 <div className={dcss.detail}>
                     <div className={dcss.poster}>
-                        <img src={data.poster_path ? `https://image.tmdb.org/t/p/original/${data.poster_path}` :bckimg} alt="" />
+                        <img src={data.poster_path ? `https://image.tmdb.org/t/p/original/${data.poster_path}` : bckimg} alt="" />
                     </div>
                     <div className={dcss.about}>
                         <h3 id={dcss.title}>{data.title}</h3>
@@ -42,11 +66,11 @@ function MovieDetail({ id }) {
                         <p id={dcss.statdetail} className={dcss.extra}><span>status: <span className={dcss.value}>{data.status}</span></span>
                             <span> Release Date: <span className={dcss.value}> {data.release_date}</span></span>
                             <span> Runtime: <span className={dcss.value}> {data.runtime} Min</span></span>
-                            
+
                         </p>
                         <div className={dcss.btns}>
-                            <button className={dcss.button}>Favourite</button>
-                           {data.homepage?<a className={dcss.button} href={data.homepage} target='_blank'>More Details</a>:undefined}
+                            <button className={dcss.button} onClick={handleFav}>Favourite</button>
+                            {data.homepage ? <a className={dcss.button} href={data.homepage} target='_blank'>More Details</a> : undefined}
                         </div>
 
 

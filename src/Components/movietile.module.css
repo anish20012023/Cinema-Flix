@@ -15,7 +15,8 @@
     object-fit:cover;
 }
 
-.header{background-color: rgba(128, 127, 127, 0.185);
+.header{
+    background-color: rgba(128, 127, 127, 0.185);
   padding: 1rem 2rem;
   text-align: center;
   letter-spacing: .1rem;

@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate, RouterProvider, useNavigate } from "react-router-dom";
+import {  createHashRouter, Navigate, RouterProvider, useNavigate } from "react-router-dom";
 import RootHomeLayout from "./Pages/RootHomeLayout";
 import Home from "./Pages/Home";
 import PopularPage from './Pages/PouplarPage'
@@ -17,37 +17,55 @@ import Errorpage from "./Pages/Errorpage";
 import LoginPage from "./Pages/LoginPage";
 import SignupPage from "./Pages/SignupPage";
 import FavouritePage from "./Components/FavouritePage";
+import HomeUpcoming from "./Components/HomeUpcoming";
+import {loader as HomeUpcomingLoader} from './Components/HomeUpcoming'
 
 
-const router = createBrowserRouter(
+const router = createHashRouter(
   [
-    {path:'/', element:<LoginPage/>,errorElement: <Errorpage/>},
-    {path:'/signup', element:<SignupPage/>},
+    { path: '/', element: <LoginPage />, errorElement: <Errorpage /> },
+    { path: '/signup', element: <SignupPage /> },
 
     {
       path: '/user',
       element: <RootHomeLayout />,
-      errorElement: <Errorpage/>,
-      
-     
+      errorElement: <Errorpage />,
+
+
       children: [
-        { path: '/user', element: <Home />, loader: slideLoader },
-        { path: 'movies/:page', element: <Movies />, loader: MovieLoader,  },
-        { path: 'movies/:page/:movieId', element: <DetailPage />, loader: MovieDetailLoader  },
+        {
+          path: '/user',
+          children: [
+            {
+              index: '/user', element: <Home />, loader: slideLoader,
+              children: [
+                {index:true, element: <HomeUpcoming />,loader:HomeUpcomingLoader, id:"homeUpComing" },
+                
+              ]
+            },
+            {path:'/user/:movieId' , element:<DetailPage/>, loader:MovieDetailLoader},
+            { path: 'movies/:page', element: <Movies />, loader: MovieLoader, },
+            { path: 'movies/:page/:movieId', element: <DetailPage />, loader: MovieDetailLoader },
 
-        { path: 'popular/:page', element: <PopularPage />, loader: popularmovieLoader },
-        { path: 'popular/:page/:movieId', element: <DetailPage />, loader: MovieDetailLoader },
+            { path: 'popular/:page', element: <PopularPage />, loader: popularmovieLoader, },
+            { path: 'popular/:page/:movieId', element: <DetailPage />, loader: MovieDetailLoader },
 
-        { path: 'upcoming/:page', element: <UpcomingPage />, loader: upcomingmovieLoader },
-        { path: 'upcoming/:page/:movieId', element: <DetailPage />, loader: MovieDetailLoader },
+            { path: 'upcoming/:page', element: <UpcomingPage />, loader: upcomingmovieLoader, },
+            { path: 'upcoming/:page/:movieId', element: <DetailPage />, loader: MovieDetailLoader },
 
-        { path: 'tv/:page', element: <TvshowPage />, loader: tvShowLoader },
-        { path: 'favourite', element:<FavouritePage/>},
+            { path: 'tv/:page', element: <TvshowPage />, loader: tvShowLoader },
+            { path: 'favourite', element: <FavouritePage /> },
+            { path: 'favourite/:movieId', element: <DetailPage />, loader: MovieDetailLoader }
+
+
+          ]
+        },
+
 
 
       ]
     },
-    
+
   ]
 )
 function App() {
@@ -55,7 +73,7 @@ function App() {
 
   return (
     <RouterProvider router={router} />
-   
+
 
   );
 }

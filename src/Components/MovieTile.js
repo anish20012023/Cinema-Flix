@@ -36,7 +36,7 @@ function MovieTile({movieList, type, heading}) {
                                 <Link to={`${movie.id}`}>
                                     
                                     <div className={mstyle.movieTile}>
-                                        <img src={movie.poster_path ? `https://image.tmdb.org/t/p/original/${movie.poster_path}` : '../images/banner1.jpg'} alt="" width={50} />
+                                        <img src={movie.poster_path ? `https://image.tmdb.org/t/p/original/${movie.poster_path}` : banner} alt=""  />
                                         <span className={mstyle.about}>
                                             <h3 id={mstyle.title}>{type==='tv'?movie.original_name:movie.title}</h3>
                                             <p id={mstyle.date}>{type==='tv'?movie.first_air_date:movie.release_date}</p>

@@ -1,17 +1,26 @@
-import React, { useState } from 'react'
-import homecss from './Home.module.css'
-import { useLoaderData, useParams , Link} from 'react-router-dom';
-import TrendingSlides from '../Components/TrendingSlides';
+import React from 'react'
+import HomeUpcoming from '../Components/HomeUpcoming';
+import { useLoaderData} from 'react-router-dom';
+
+const Trendingslides=React.lazy(()=>import('../Components/TrendingSlides'))
+const HomeMovieList= React.lazy(()=>import ('../Components/HomeMoviesList'))
 
 function Home() {
     
     const popularMovie=useLoaderData().results;
+    const data = popularMovie.slice(0, 10);
+ 
+   
     
     
     return (
         <>
-        <TrendingSlides popularMovie={popularMovie} />
-        <p>helo</p>
+        <Trendingslides popularMovie={popularMovie} />
+       
+        <HomeUpcoming/>
+    
+        <HomeMovieList data={data} type="Latest Movies" path='movies/1'/>
+
         </>
             
             
