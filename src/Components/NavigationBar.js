@@ -8,9 +8,9 @@ import profileLogo from '../profile.webp'
 
 
 function NavigationBar() {
-let username=localStorage.getItem("currentUser")?JSON.parse(localStorage.getItem("currentUser")).username: ""
+  let username = localStorage.getItem("currentUser") ? JSON.parse(localStorage.getItem("currentUser")).username : ""
 
- 
+
 
 
 
@@ -28,15 +28,19 @@ let username=localStorage.getItem("currentUser")?JSON.parse(localStorage.getItem
         <li><NavLink className={({ isActive }) => isActive ? navcss.active : undefined} to="/user/popular/1">Popular</NavLink></li>
         <li><NavLink className={({ isActive }) => isActive ? navcss.active : undefined} to="upcoming/1">Upcoming</NavLink></li>
       </ul>
+
       <div className={navcss.userProfile}>
-        <div id={navcss.profileLogo}>
+        <NavLink id={navcss.favourite} className={navcss.favLog} style={({ isActive }) => { return { border: isActive ? '.1rem solid ' : '' } }} to='favourite'><i class="fa-solid fa-bookmark"></i> <span>Favourite</span></NavLink>
+      <div className={navcss.logoname}>
+      <div id={navcss.profileLogo}>
           <img src={profileLogo} alt="" />
         </div>
         <span id={navcss.username}>Hey, {username}</span>
-        <div className={navcss.favLogDiv}>
-        <NavLink id={navcss.favourite}  className={navcss.favLog} style={({isActive})=>{return {border: isActive? '.1rem solid ':''}}} to='favourite'><i class="fa-solid fa-bookmark"></i> <span>Favourite</span></NavLink>
-        <NavLink id={navcss.logout} className={navcss.favLog} to='/'><i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Logout</span></NavLink>
-        </div>
+
+      </div>
+
+
+        <NavLink id={navcss.logout} className={navcss.favLog} to='/'><i class="fa-solid fa-arrow-right-from-bracket"></i></NavLink>
 
       </div>
 
