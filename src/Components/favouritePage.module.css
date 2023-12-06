@@ -102,7 +102,7 @@ background-color: rgba(0, 0, 0, 0.425);
     justify-content: space-evenly;
     align-items: center;
     
-    /* visibility: hidden; */
+    visibility: hidden;
 }
 .tile:hover>.overlay{
     visibility: visible;

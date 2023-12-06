@@ -1,9 +1,11 @@
 import React from 'react'
-import HomeUpcoming from '../Components/HomeUpcoming';
-import { useLoaderData} from 'react-router-dom';
 
-const Trendingslides=React.lazy(()=>import('../Components/TrendingSlides'))
+import { useLoaderData} from 'react-router-dom';
+import TrendingSlides from '../Components/TrendingSlides'
+
+
 const HomeMovieList= React.lazy(()=>import ('../Components/HomeMoviesList'))
+const HomeUpcoming =React.lazy(()=>import('../Components/HomeUpcoming'))
 
 function Home() {
     
@@ -15,7 +17,7 @@ function Home() {
     
     return (
         <>
-        <Trendingslides popularMovie={popularMovie} />
+        <TrendingSlides popularMovie={popularMovie} />
        
         <HomeUpcoming/>
     
