@@ -13,12 +13,13 @@ import { loader as popularmovieLoader } from './Pages/PouplarPage'
 import { loader as upcomingmovieLoader } from './Pages/UpcomingPage'
 import { loader as tvShowLoader } from './Pages/TvshowPage'
 import Errorpage from "./Pages/Errorpage";
-
+import Tvdetail from "./Components/Tvdetail";
 import LoginPage from "./Pages/LoginPage";
 import SignupPage from "./Pages/SignupPage";
 import FavouritePage from "./Components/FavouritePage";
 import HomeUpcoming from "./Components/HomeUpcoming";
 import {loader as HomeUpcomingLoader} from './Components/HomeUpcoming'
+import {loader as TvDetailLoader} from './Components/Tvdetail'
 
 
 const router = createHashRouter(
@@ -35,6 +36,7 @@ const router = createHashRouter(
       children: [
         {
           path: '/user',
+          errorElement: <Errorpage />,
           children: [
             {
               index: '/user', element: <Home />, loader: slideLoader,
@@ -54,6 +56,7 @@ const router = createHashRouter(
             { path: 'upcoming/:page/:movieId', element: <DetailPage />, loader: MovieDetailLoader },
 
             { path: 'tv/:page', element: <TvshowPage />, loader: tvShowLoader },
+            { path: 'tv/:page/:tvid', element: <Tvdetail />, loader:TvDetailLoader},
             { path: 'favourite', element: <FavouritePage /> },
             { path: 'favourite/:movieId', element: <DetailPage />, loader: MovieDetailLoader }
 
